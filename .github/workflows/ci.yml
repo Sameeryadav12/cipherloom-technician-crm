@@ -32,6 +32,9 @@ jobs:
       - name: Prisma validate
         run: pnpm --filter @cipherloom/backend exec prisma validate
 
+      - name: Prisma generate
+        run: pnpm --filter @cipherloom/backend prisma:generate
+
       - name: Typecheck / lint
         run: pnpm lint
 

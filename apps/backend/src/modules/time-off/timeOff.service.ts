@@ -186,7 +186,7 @@ export async function createTimeOff(
         payload: {
           technicianId: input.technicianId,
           timeOffId: created.id,
-          overlappingJobIds: overlappingJobs.map((j) => j.id)
+          overlappingJobIds: overlappingJobs.map((j: { id: string }) => j.id)
         }
       });
     } catch (error) {
@@ -260,7 +260,7 @@ export async function updateTimeOff(
         payload: {
           technicianId: nextTechnicianId,
           timeOffId: updated.id,
-          overlappingJobIds: overlappingJobs.map((j) => j.id)
+          overlappingJobIds: overlappingJobs.map((j: { id: string }) => j.id)
         }
       });
     } catch (error) {
