@@ -1,0 +1,27 @@
+node_modules
+.DS_Store
+Thumbs.db
+dist
+build
+.turbo
+.cache
+.vite
+.env
+.env.*
+!.env.example
+coverage
+*.log
+pnpm-debug.log*
+*.pid
+.idea/
+.vscode/
+*.tmp
+*.temp
+tmp/
+temp/
+uploads/
+*.sqlite
+*.sqlite3
+
+# Keep migration history tracked for production deploy safety.
+!apps/backend/prisma/migrations/

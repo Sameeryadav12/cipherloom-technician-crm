@@ -1,0 +1,25 @@
+{
+  "name": "technician-crm-monorepo",
+  "private": true,
+  "packageManager": "pnpm@10.33.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n backend,frontend -c blue,green \"pnpm --filter @cipherloom/backend dev\" \"pnpm --filter @cipherloom/frontend dev\"",
+    "start": "pnpm --filter @cipherloom/backend start",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r lint",
+    "seed": "pnpm --filter @cipherloom/backend seed",
+    "prisma:generate": "pnpm --filter @cipherloom/backend prisma:generate",
+    "prisma:migrate:dev": "pnpm --filter @cipherloom/backend prisma:migrate",
+    "prisma:migrate:deploy": "pnpm --filter @cipherloom/backend prisma:migrate:deploy"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "eslint": "^10.1.0",
+    "typescript": "^5.8.2"
+  }
+}

@@ -1,0 +1,2 @@
+export const DISPATCH_STALE_HOURS = 48;
+export const DISPATCH_STARTS_SOON_HOURS = 24;

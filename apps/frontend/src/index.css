@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background-image:
+      radial-gradient(ellipse 120% 80% at 50% -20%, rgba(59, 130, 246, 0.12), transparent 55%),
+      radial-gradient(ellipse 80% 50% at 100% 0%, rgba(139, 92, 246, 0.06), transparent 45%),
+      linear-gradient(180deg, hsl(222 47% 11%) 0%, hsl(222 47% 9%) 100%);
+    background-attachment: fixed;
+  }
+}
+
+/* FullCalendar — dark SaaS shell (variables align with tailwind theme) */
+.fc {
+  --fc-border-color: hsl(217 33% 17%);
+  --fc-page-bg-color: hsl(222 47% 11%);
+  --fc-neutral-bg-color: hsl(217 33% 17%);
+  --fc-list-event-hover-bg-color: hsl(217 33% 20%);
+  --fc-today-bg-color: rgba(59, 130, 246, 0.06);
+  --fc-now-indicator-color: hsl(221 83% 53%);
+  --fc-button-bg-color: hsl(217 33% 17%);
+  --fc-button-border-color: hsl(217 33% 17%);
+  --fc-button-text-color: hsl(210 40% 98%);
+}
+
+.fc .fc-button-primary:not(:disabled):hover {
+  filter: brightness(1.08);
+}
+
+.fc .fc-button-primary:not(:disabled):active,
+.fc .fc-button-primary:not(:disabled).fc-button-active {
+  filter: brightness(1.15);
+}
+
+.fc .fc-col-header-cell,
+.fc .fc-daygrid-day {
+  background: hsl(222 47% 13%);
+}
+
+.fc .fc-scrollgrid {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.fc .fc-toolbar-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.fc .fc-toolbar-chunk .fc-button {
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding-inline: 0.65rem;
+}
+
+.fc .fc-toolbar-chunk .fc-button.fc-button-active {
+  background: hsl(221 83% 48%);
+  border-color: hsl(221 83% 48%);
+}
+
+.fc .fc-timegrid-slot-label {
+  font-size: 0.7rem;
+  color: hsl(215 16% 65%);
+}
+
+.fc .fc-timegrid-col.fc-day-today,
+.fc .fc-daygrid-day.fc-day-today {
+  background: rgba(59, 130, 246, 0.07) !important;
+}
+
+.fc .fc-non-business {
+  background: hsl(222 47% 9% / 0.55);
+}
+
+.fc-event.calendar-event-work {
+  border-left-width: 3px !important;
+  border-radius: 0.35rem;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.fc-event.calendar-event-leave {
+  border-left-width: 3px !important;
+  border-radius: 0.35rem;
+  border-style: dashed !important;
+  border-right-style: dashed !important;
+  border-top-style: dashed !important;
+  border-bottom-style: dashed !important;
+  border-left-style: solid !important;
+}
+
+.fc .fc-timegrid-now-indicator-line {
+  border-width: 2px 0 0;
+}
+
+.fc-event.calendar-event-applied-highlight {
+  animation: calendar-applied-pulse 1.1s ease-in-out 3;
+  box-shadow:
+    0 0 0 2px rgba(59, 130, 246, 0.55),
+    0 0 18px rgba(59, 130, 246, 0.28);
+  z-index: 2;
+}
+
+@keyframes calendar-applied-pulse {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.12);
+  }
+}
